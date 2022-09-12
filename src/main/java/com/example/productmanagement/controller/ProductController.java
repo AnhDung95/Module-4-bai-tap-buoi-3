@@ -57,18 +57,10 @@ public class ProductController {
         model.addAttribute("product",productService.findById(id));
         return "/view";
     }
-    @GetMapping("/{name}/result")
-    public String find(@RequestParam String search ){
-        List<Product>productList=productService.findAll();
-        for (int i = 0; i < productList.size(); i++) {
-            if (productList.get(i).getName().equalsIgnoreCase(search)){
-                Product product=productList.get(i);
-
-            } else {
-
-            }
-        }
-        return "/result";
+    @GetMapping("/search")
+    public String findByName(@RequestParam String search, Model model ) {
+        model.addAttribute("product", productService.findByName(search));
+        return "/view";
     }
-
 }
+

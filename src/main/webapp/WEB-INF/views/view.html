@@ -8,17 +8,17 @@
     Back to product list
   </a>
 </p>
-<div id="detail">
+<div th:each="product:${product}" id="detail">
   <div class="prodetail">
     <label>Name:</label>
     <label th:text="${product.name}"></label>
   </div>
   <div class="prodetail">
-    <label>Email:</label>
+    <label>Description:</label>
     <label th:text="${product.description}"></label>
   </div>
   <div class="prodetail">
-    <label>Address:</label>
+    <label>Supplier:</label>
     <label th:text="${product.supplier}"></label>
   </div>
 </div>
